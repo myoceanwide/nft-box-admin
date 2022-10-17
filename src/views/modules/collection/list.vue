@@ -199,6 +199,7 @@
 
 <script>
 import moment from 'moment';
+import JSONBIG from 'json-bigint';
 import ListCreateUpdate from './list-create-update.vue';
 export default {
   data() {
@@ -247,6 +248,14 @@ export default {
         url: this.$http.adornUrl('/npGoods/page'),
         method: 'get',
         params: this.$http.adornParams(params),
+        transformResponse: [
+          (data) => {
+            // 对data（后台的原始数据）进行转换
+            if (data) {
+              return JSONBIG.parse(data);
+            }
+          },
+        ],
       }).then(({ data }) => {
         this.loading = false;
         this.page.total = data.total;
