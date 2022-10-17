@@ -5,6 +5,14 @@ import qs from 'qs'
 import merge from 'lodash/merge'
 import { clearLoginInfo } from '@/utils'
 import { Message } from 'element-ui'
+import JSONBIG from 'json-bigint'
+// 默认配置  转换响应数据
+// axios.defaults.transformResponse = [data => {
+//   // 对data（后台的原始数据）进行转换
+//   if (data) {
+//     return JSONBIG.parse(data)
+//   }
+// }]
 
 const http = axios.create({
   timeout: 1000 * 30,

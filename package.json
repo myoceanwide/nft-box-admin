@@ -16,6 +16,7 @@
     "crypto-js": "^4.1.1",
     "dayjs": "^1.11.1",
     "element-ui": "^2.15.2",
+    "json-bigint": "^1.0.0",
     "lodash": "4.17.5",
     "moment": "^2.29.4",
     "svg-sprite-loader": "3.7.3",
